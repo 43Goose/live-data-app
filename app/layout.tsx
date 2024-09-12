@@ -9,7 +9,7 @@ import Provider from "@/components/Provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Live Data App",
+  title: "Footprint",
   description: "Created by Goose",
 };
 
