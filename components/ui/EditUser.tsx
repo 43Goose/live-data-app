@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Button } from './button'
 import { InputWithLabel } from './InputWithLabel'
 import { changeUserName } from '@/lib/actions/db-actions';
-import { signOut, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 
 export default function EditUser({ closeFn }: { closeFn: Function }) {
     const [value, setValue] = useState('');

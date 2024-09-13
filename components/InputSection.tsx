@@ -5,7 +5,6 @@ import { Button } from './ui/button';
 import { socket } from '@/lib/socket';
 import { useSession } from 'next-auth/react';
 import UserMenu from './ui/UserMenu';
-import { getUserByEmail } from '@/lib/actions/db-actions';
 
 export default function InputSection({ openEditFn }: { openEditFn: Function }) {
     const [value, setValue] = useState('');
