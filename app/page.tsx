@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <main className="h-screen">
-      <div className="fixed top-4 left-4 w-24 h-24 z-50">
+      <div className="hidden fixed top-4 left-4 w-24 h-24 z-50 md:block">
         <Image src={LOGO} alt="footprint logo" />
       </div>
       <div className="w-full">
