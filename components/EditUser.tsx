@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react'
-import { Button } from './button'
-import { InputWithLabel } from './InputWithLabel'
+import { Button } from './ui/button'
+import { InputWithLabel } from './ui/InputWithLabel'
 import { changeUserName } from '@/lib/actions/db-actions';
 import { useSession } from 'next-auth/react';
 
@@ -24,7 +24,7 @@ export default function EditUser({ closeFn }: { closeFn: Function }) {
     }
 
     return (
-        <div className='absolute top-0 w-full h-screen flex pt-64 justify-center bg-black bg-opacity-50 md:pt-0 md:items-center'>
+        <div className='absolute top-0 w-full h-screen flex pt-36 justify-center bg-black bg-opacity-50 md:pt-0 md:items-center'>
             <div className='relative w-3/4 max-w-md h-min py-8 bg-slate-900 rounded-xl md:max-w-xl'>
                 <div className='w-full h-full flex flex-col items-center justify-center'>
                     <h1 className='text-3xl font-bold text-center'>Change Display Name</h1>

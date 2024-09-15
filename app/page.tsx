@@ -3,7 +3,7 @@ import MessageSection from "@/components/MessageSection";
 import InputSection from "../components/InputSection";
 import AccountScreen from "@/components/AccountScreen";
 import { useSession } from "next-auth/react";
-import EditUser from "@/components/ui/EditUser";
+import EditUser from "@/components/EditUser";
 import { useState } from "react";
 import LOGO from "../public/Footprint.svg";
 import Image from "next/image";
