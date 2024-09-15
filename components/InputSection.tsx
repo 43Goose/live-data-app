@@ -38,7 +38,7 @@ export default function InputSection({ openEditFn }: { openEditFn: Function }) {
     }
 
     return (
-        <div className='fixed bottom-0 w-full h-36 p-4 flex items-start bg-slate-900 border-t border-gray-600 md:h-32 md:px-12'>
+        <div className='fixed bottom-0 w-full h-28 p-4 flex items-start bg-slate-900 border-t border-gray-600 md:h-32 md:px-12'>
             <UserMenu openEditFn={openEditFn} />
             <div className="relative grow">
                 <InputWithLabel
