@@ -8,21 +8,22 @@ import UserMenu from './ui/UserMenu';
 
 export default function InputSection({ openEditFn }: { openEditFn: Function }) {
     const [value, setValue] = useState('');
-    const [isSending, setIsSending] = useState(false);
-    const { data: session, status } = useSession();
-    const max = 50;
+    const [isSending, setIsSending] = useState(false); // for loading animation
+    const { data: session, status } = useSession(); // session data from next-auth
+    const max = 50; // character limit (smart people can get around this on the client but the server will also check :) )
 
     const handleValueChange = (newValue: string) => {
         setValue(newValue.length > 50 ? value : newValue);
     }
 
     const handleMessage = async () => {
+        //check if user is authenticated
         if (status !== 'authenticated') {
             alert('Error: not logged in!');
             return;
         }
 
-        const data = JSON.stringify({ email: session.user?.email, content: value });
+        const data = JSON.stringify({ email: session.user?.email, content: value }); // convert json data to string for transport to server
         setIsSending(true);
         socket.emit('message request', data, (res: any) => {
             if (!res) {
@@ -37,7 +38,7 @@ export default function InputSection({ openEditFn }: { openEditFn: Function }) {
     }
 
     return (
-        <div className='fixed bottom-0 w-full h-48 p-4 flex items-start bg-slate-900 border-t border-gray-600 md:h-32 md:px-12'>
+        <div className='fixed bottom-0 w-full h-36 p-4 flex items-start bg-slate-900 border-t border-gray-600 md:h-32 md:px-12'>
             <UserMenu openEditFn={openEditFn} />
             <div className="relative grow">
                 <InputWithLabel

@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function Message({ messageData }: { messageData: message }) {
     const getDate = () => {
-        const [month, day, year] = new Date(messageData.date).toString().slice(4, 15).split(' ');;
-        const showYear = new Date(new Date().getFullYear(), 0, 1).valueOf() > messageData.date;
+        const [month, day, year] = new Date(messageData.date).toString().slice(4, 15).split(' '); // gets day, month, and year from the message data
+        const showYear = new Date(new Date().getFullYear(), 0, 1).valueOf() > messageData.date; // if the message was sent before the start of the current year it will display the month and year instead of month and day
         return (`${month} ${showYear ? year : Number(day)}`);
     }
 

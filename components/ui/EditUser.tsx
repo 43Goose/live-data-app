@@ -16,6 +16,7 @@ export default function EditUser({ closeFn }: { closeFn: Function }) {
     }
 
     const changeName = async () => {
+        // checks if user is authenticated and if so, tells the server to change their username
         if (status === 'authenticated') {
             const res = await changeUserName(session!.user!.email!, session.user!.name!, value);
             setResult(res);

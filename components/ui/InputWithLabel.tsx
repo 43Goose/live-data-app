@@ -25,7 +25,7 @@ export function InputWithLabel({
                 value={value}
                 onChange={(e) => controlFn !== undefined ? controlFn(e.currentTarget.value) : null}
                 placeholder={placeholder}
-                className="bg-slate-800 text-white placeholder:text-white"
+                className="bg-slate-800 text-white text-base placeholder:text-white"
             />
         </div>
     )

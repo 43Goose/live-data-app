@@ -10,10 +10,10 @@ import Image from "next/image";
 
 export default function Home() {
   const [showEdit, setShowEdit] = useState(false);
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession(); // next-auth session data
 
   return (
-    <main className="h-screen">
+    <main className={`h-screen ${status !== 'authenticated' && 'overflow-hidden'}`}>
       <div className="hidden fixed top-4 left-4 w-24 h-24 z-50 md:block">
         <Image src={LOGO} alt="footprint logo" />
       </div>
